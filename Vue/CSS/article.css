@@ -1,0 +1,76 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+main .link li {
+    list-style: none;
+    width: 30%;
+    background-color: #000;
+    text-align: center;
+}
+
+main .link li a {
+    font-size: 15px;
+    width: 100%;
+    color: #fff;
+}
+
+main .link .link_facebook {
+    background-color: #3b5998;
+}
+
+main .link .link_twitter {
+    background-color: #00acee;
+}
+
+main .link .link_linkedIn {
+    background-color: #0e76a8;
+}
+
+main .link ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+main .categorie li {
+    list-style: none;
+    display: inline-block;
+}
+
+main .categorie a {
+    color: #000;
+}
+
+main label {
+    width: 50%;
+}
+
+main h3 {
+    font-weight: 400;
+    font-size: 30px;
+}
+
+main input[type=text] {
+    width: 95%;
+    margin: 1% 0;
+}
+
+.text {
+    width: 85%;
+}
+
+.text span {
+    vertical-align: 80px;
+}
+
+textarea {
+    width: 95%;
+}
+
+input[type=submit] {
+    background-color: #000;
+    color: #fff;
+    width: 15%;
+}

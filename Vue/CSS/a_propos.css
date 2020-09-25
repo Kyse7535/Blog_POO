@@ -1,0 +1,40 @@
+.ligne,
+.ligne2 {
+    padding: 1%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+img {
+    width: 35%;
+    height: auto;
+    align-self: flex-start;
+    position: relative;
+    top: 10%;
+}
+
+.text {
+    padding: 0 2%;
+    width: 64%;
+    font-size: 11px;
+}
+
+h3 {
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+@media (min-width: 990px) {
+    img {
+        width: 50%;
+        height: auto;
+        align-self: flex-start;
+    }
+    .text {
+        padding: 0 2%;
+        width: 45%;
+        font-size: 13px;
+    }
+}

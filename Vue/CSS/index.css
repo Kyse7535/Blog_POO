@@ -1,0 +1,322 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+
+/*start header code*/
+
+header li a {
+    padding: 10px 20px;
+    color: #000;
+    font-size: 2vw;
+    width: 100%;
+}
+
+header li {
+    list-style: none;
+}
+
+header ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 50px;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+header h1 {
+    text-transform: uppercase;
+    font-size: 8vw;
+}
+
+
+/* end of header code*/
+
+
+/*start main code*/
+
+main h2 {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 3% 0;
+    font-weight: 500;
+}
+
+
+/*start row 1 code SUIVEZ MON AVENTURE*/
+
+main .image {
+    background: url("Vue/CSS/street-.jpg") center no-repeat;
+    background-size: cover;
+    height: 500px;
+    font-size: 3vw;
+}
+
+main .image h2 {
+    font-size: 5vw;
+}
+
+main .image div {
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10%;
+}
+
+main .text1 {
+    position: relative;
+    top: 30%;
+}
+
+main .text3 {
+    position: relative;
+    bottom: 11%;
+}
+
+main .text2 {
+    position: relative;
+    top: 12%;
+}
+
+main .image a {
+    color: #000;
+    padding: 0.5% 5%;
+    border: 1px solid #000;
+    font-size: 25px;
+}
+
+main .text2 a {
+    padding: 0.5% 3%;
+}
+
+
+/*end row 1 code
+
+/*start row 2 code RETROUVEZ MOI SUR*/
+
+main .link_social_network {
+    padding: 5% 5%;
+}
+
+main .link_social_network .link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+main .link_social_network .twitter,
+.youtube,
+.instagram {
+    height: 200px;
+    width: 70%;
+    background: url("Vue/CSS/image1.jpg") center no-repeat;
+    background-size: cover;
+    margin: 2% 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+main .link_social_network .youtube {
+    background: url("Vue/CSS/image2.jpg") center no-repeat;
+    background-size: cover;
+}
+
+main .link_social_network .instagram {
+    background: url("Vue/CSS/image3.jpg") center no-repeat;
+    background-size: cover;
+}
+
+main .link_social_network h5 {
+    height: 100%;
+}
+
+main .link_social_network .shadow {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+main .link_social_network a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    position: relative;
+    top: 50%;
+    padding: 20% 30%;
+}
+
+
+/*end row 2 code */
+
+
+/*start row 3 code ARTICLES RECENTS AND A PROPOS*/
+
+main .latest_article_list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+main .latest_article_list .item {
+    width: 90%;
+}
+
+main .latest_article_list img {
+    width: 100%;
+    height: auto;
+}
+
+main .latest_article_list a {
+    color: #000;
+    text-decoration: none;
+}
+
+main .latest_article_list figcaption {
+    font-weight: 400;
+}
+
+main .latest_article_list b {
+    font-weight: 500;
+}
+
+main .a_propos img {
+    width: 100%;
+    height: auto;
+}
+
+
+/*end row 3 code*/
+
+
+/*end main code*/
+
+
+/*start footer code*/
+
+footer {
+    background-color: #2e2e2e;
+}
+
+footer ul {
+    text-align: center;
+    padding: 2% 0;
+}
+
+footer li {
+    display: inline-block;
+    list-style: none;
+    padding: 10px;
+}
+
+footer a {
+    color: #fff;
+}
+
+
+/*end footer code*/
+
+@media only screen and (min-width: 768px) {
+    /*start header code*/
+    header h1 {
+        font-size: 40px;
+        font-weight: bold;
+    }
+    header li a {
+        padding: 10px 20px;
+        color: #000;
+        font-size: 20px;
+        font-weight: 300;
+    }
+    /*end header code*/
+    /*start row1 */
+    main .image {
+        height: 700px;
+    }
+    /*end row 1 */
+    /*start main code*/
+    /*start row2 code RETROUVEZ MOI SUR*/
+    main .link_social_network {
+        padding: 0;
+    }
+    main .link_social_network .link {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+        flex-direction: row;
+    }
+    main .link_social_network .twitter,
+    .youtube,
+    .instagram {
+        height: 200px;
+        width: 32%;
+        background: url("Vue/CSS/image1.jpg") center no-repeat;
+        background-size: cover;
+        margin: 2% 0;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    main .link_social_network a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 400;
+        position: relative;
+        top: 50%;
+        padding: 15% 20%;
+    }
+    /*end row 2 code*/
+    /*start row 1 code SUIVEZ MON AVENTURE*/
+    main .image {
+        font-size: 20px;
+    }
+    main .image h2 {
+        font-size: 40px;
+    }
+    /*end row 1 code */
+    /*start row 3 code*/
+    main .latest_article_list {
+        text-align: left;
+    }
+    main .latest_article_list figure {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 0;
+        padding: 2% 0;
+    }
+    main .latest_article_list img {
+        width: 35%;
+        height: auto;
+    }
+    main .latest_article_list figcaption {
+        width: 58%;
+        align-self: center;
+    }
+    main .a_propos .content {
+        display: flex;
+        justify-content: space-between;
+    }
+    main .a_propos img {
+        width: 50%;
+        height: auto;
+    }
+    main .a_propos .text {
+        width: 48%;
+    }
+    main .a_propos p {
+        font-size: 15px;
+    }
+    /*end row 3 code*/
+    /*end main code*/
+    footer ul {
+        padding: 0%;
+    }
+}

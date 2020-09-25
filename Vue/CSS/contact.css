@@ -1,0 +1,32 @@
+.ligne {
+    padding: 1% 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+img {
+    width: 40%;
+    height: auto;
+}
+
+.text,
+form {
+    padding: 0 2%;
+    width: 59%;
+    font-size: 13px;
+}
+
+@media (min-width: 768px) {
+    .ligne img {
+        width: 49%;
+        height: auto;
+    }
+    .text,
+    form {
+        padding: 0 2%;
+        width: 49%;
+        font-size: 15px;
+    }
+}
