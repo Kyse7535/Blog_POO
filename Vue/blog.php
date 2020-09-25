@@ -34,7 +34,7 @@
                     <h2><?= $article['titre'] ?></h2>
                     <div class="date_auteur">
                         <p><?= $article['date_creation'] ?> | <?= $article['auteur'] ?></p>
-                        <p><?= getRowNumber($GLOBALS['base'], $article['Id_billet']) ?> commentaire(s)</p>
+                        <p><?= $mycomment->getRowNumber($base, $article['Id_billet']); ?> commentaire(s)</p>
                     </div>
                     <figure>
                         <img src="Vue/CSS/blue-hour.jpg" alt="" class="img-fluid">

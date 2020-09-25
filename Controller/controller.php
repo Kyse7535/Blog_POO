@@ -1,12 +1,15 @@
 <?php
-require("./Modele/modele.php");
-$base = connexion();
+//require("./Modele/modele.php");
+require_once("./Modele/CommentManager.php");
+require_once('./Modele/GetManager.php');
 
 
 function CtlBlog()
 {
-    $resultat1 = getAllArticles($GLOBALS['base']);
-    $resultat2 = getFirstArticles($GLOBALS['base']);
+    $myarticle = new GetManager();
+    $base = $myarticle->connexion();
+    $resultat1 = $myarticle->getAllArticles($base);
+    $resultat2 = $myarticle->getFirstArticles($base);
     if ($resultat1 == false || $resultat2 == false) {
         throw new Exception("Impossible d'afficher la page");
     } else {
@@ -17,13 +20,16 @@ function CtlBlog()
             $debut_contenu = implode(",", array_slice($tab_contenu, 0, 50)) . " ...";
             return $debut_contenu;
         }
+        $mycomment = new CommentManager();
         require("./Vue/blog.php");
     }
 }
 
 function CtlAccueil()
 {
-    $resultat = getFirstArticles($GLOBALS['base']);
+    $myarticle = new GetManager();
+    $base = $myarticle->connexion();
+    $resultat = $myarticle->getFirstArticles($base);
     if ($resultat == false) {
         throw new Exception("Impossible d'afficher la page");
     } else {
@@ -33,11 +39,14 @@ function CtlAccueil()
 
 function CtlArticle($Id_billet)
 {
+    $myarticle = new GetManager();
+    $mycomment = new CommentManager();
+    $base = $myarticle->connexion();
     $Id_billet = intval($Id_billet);
-    $article = getArticle($Id_billet, $GLOBALS['base']);
-    $nbcomment = getRowNumber($GLOBALS['base'], $Id_billet);
-    $resultat1 = getFirstArticles($GLOBALS['base']);
-    $commentaires = getFirstComments($Id_billet, $GLOBALS['base']);
+    $article = $myarticle->getArticle($Id_billet, $base);
+    $nbcomment = $mycomment->getRowNumber($base, $Id_billet);
+    $resultat1 = $myarticle->getFirstArticles($base);
+    $commentaires = $mycomment->getFirstComments($Id_billet, $base);
     if ($resultat1 == false || $commentaires == false || $nbcomment == false || $article == false) {
         throw new Exception("Impossible d'afficher la page");
     } else {
@@ -47,7 +56,9 @@ function CtlArticle($Id_billet)
 
 function CtlSetComment($auteur, $comment, $Id_billet)
 {
-    setComment($auteur, $comment, $Id_billet, $GLOBALS['base']);
+    $mycomment = new CommentManager;
+    $base = $myarticle->connexion();
+    $mycomment->setComment($auteur, $comment, $Id_billet, $base);
 }
 
 function CtlA_propos()

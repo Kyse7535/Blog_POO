@@ -44,13 +44,13 @@
                     <img src="Vue/CSS/image3.jpg" alt="description" class="img-fluid px-2">
                 </div>
             </div>
-            <div class="row my-5">
+            <div class="row my-5 ">
                 <div class="col-12 col-md-8 offset-md-2 ligne">
                     <form action="">
                         <label for="nom">Nom</label><br>
                         <input type="text" name="nom"><br>
                         <label for="prenom">Prenom</label><br>
-                        <input type="text" name="prenom">
+                        <input type="text" name="prenom"><br>
                         <label for="">Email</label><br>
                         <input type="text"><br>
                         <label for="">Message</label><br>
