@@ -29,12 +29,13 @@
                 <div class="col-12 ligne col-md-8 offset-md-2 ">
                     <div class="text">
                         <h4 class="py-2">Contactez moi</h4>
-                        <p>VOUS ÊTES UN LECTEUR: Ceci est un paragraphe. Survolez-moi avec votre souris d'ordinateur et
+                        <p><b>VOUS ÊTES UN LECTEUR</b>: Ceci est un paragraphe. Survolez-moi avec votre souris
+                            d'ordinateur et
                             cliquez une fois pour que le menu s'affiche. Double-cliquez pour éditer directement le
                             texte. Vous pouvez aussi me déplacer n'importe où sur la page par la méthode du «Glisser et
                             Déposer»
                         </p>
-                        <p>VOUS ÊTES ANNONCEUR OU SPONSOR: Ceci est un paragraphe. Survolez-moi avec votre souris
+                        <p><b>VOUS ÊTES ANNONCEUR OU SPONSOR</b>: Ceci est un paragraphe. Survolez-moi avec votre souris
                             d'ordinateur et cliquez une fois pour que le menu s'affiche. Double-cliquez pour éditer
                             directement le texte. Vous pouvez aussi me déplacer n'importe où sur la page par la méthode
                             du «Glisser et Déposer»
