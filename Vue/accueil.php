@@ -50,15 +50,15 @@
                 <h2 class="text-center py-3">Articles recents</h2>
                 <div class="latest_article_list">
                     <?php
-
-                    while ($donnees = $resultat->fetch()) {
+                    while ($donnees = $resultat->fetch(PDO::FETCH_ASSOC)) {
+                        $commentaire = new article($donnees);
                     ?>
                     <div class="item">
                         <figure class="py-1">
                             <img class="img-fluid" src="Vue/CSS/blue-hour.jpg" alt="article">
                             <figcaption class="py-2"><a
-                                    href="index.php?action=article&Id=<?= $donnees['Id_billet']; ?>">
-                                    <b><?= $donnees['titre']; ?></b> , <?= $donnees['date_creation']; ?>
+                                    href="index.php?action=article&Id=<?= $commentaire->getId_billet(); ?>">
+                                    <b><?= $commentaire->getTitre(); ?></b> , <?= $commentaire->getDate_creation(); ?>
                                 </a>
 
                             </figcaption>

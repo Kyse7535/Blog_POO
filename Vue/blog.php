@@ -11,18 +11,19 @@
         <div class="row ligne">
             <?php
             while ($article = $resultat1->fetch()) {
+                $monarticle = new article($article);
             ?>
             <div class="col-9 text-right py-5 article">
-                <h2><?= $article['titre'] ?></h2>
+                <h2><?= $monarticle->getTitre() ?></h2>
                 <div class="date_auteur">
-                    <p><?= $article['date_creation'] ?> | <?= $article['auteur'] ?></p>
-                    <p><?= $mycomment->getRowNumber($base, $article['Id_billet']); ?> commentaire(s)</p>
+                    <p><?= $monarticle->getDate_creation() ?> | <?= $monarticle->getAuteur() ?></p>
+                    <p><?= $mycomment->getRowNumber($base, $monarticle->getId_billet()); ?> commentaire(s)</p>
                 </div>
                 <figure>
-                    <img src="Vue/CSS/blue-hour.jpg" alt="" class="img-fluid">
-                    <figcaption><?= _50_premier_mot($article['contenu']) ?></figcaption>
+                    <img src="<?= "../fichiers/" . $monarticle->getImage() ?>" alt="" class="img-fluid">
+                    <figcaption><?= _50_premier_mot($monarticle->getContenu()) ?></figcaption>
                 </figure>
-                <a href="index.php?action=article&Id=<?= $article['Id_billet'] ?>">Lire la suite</a>
+                <a href="index.php?action=article&Id=<?= $monarticle->getId_billet() ?>">Lire la suite</a>
             </div>
             <?php
             }
@@ -36,14 +37,15 @@
                 <div class="latest_article_list">
                     <?php
 
-                    while ($donnees = $resultat2->fetch()) {
+                    while ($article = $resultat2->fetch()) {
+                        $monarticle = new article($article);
                     ?>
                     <div class="item">
                         <figure>
                             <img class="img-fluid" src="Vue/CSS/blue-hour.jpg" alt="article">
                             <figcaption class="py-2"><a
-                                    href="index.php?action=article&Id=<?= $donnees['Id_billet']; ?>">
-                                    <b><?= $donnees['titre']; ?></b> , <?= $donnees['date_creation']; ?>
+                                    href="index.php?action=article&Id=<?= $monarticle->getId_billet() ?>">
+                                    <b><?= $monarticle->getTitre(); ?></b> , <?= $monarticle->getDate_creation() ?>
                                 </a>
 
                             </figcaption>
@@ -56,7 +58,7 @@
             </div>
         </div>
         <div class="col-12 col-md-4 offset-md-2 text-center publish my-3">
-            <a href="#">Publier un article <i class="fas fa-plus"></i></a>
+            <a href="index.php?action=add">Publier un article <i class="fas fa-plus"></i></a>
         </div>
     </div>
 </main>

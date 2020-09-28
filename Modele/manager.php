@@ -6,6 +6,7 @@
  */
 class manager
 {
+
     /**
      * connexion a la base de données
      *
@@ -19,4 +20,11 @@ class manager
         // echo "connexion reussie <br>";
         return $base;
     }
+
+    /**
+     * hydrate permet d'initialiser toutes la variables de mon objet
+     *
+     * @param  mixed $tableau
+     * @return void
+     */
 }

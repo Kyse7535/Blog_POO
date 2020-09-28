@@ -12,7 +12,7 @@ class GetManager extends manager
      */
     public function getAllArticles($base)
     {
-        $sql = "SELECT * FROM billet ORDER BY date_creation, Id_billet DESC";
+        $sql = "SELECT * FROM billet ORDER BY date_creation DESC, Id_billet DESC";
         $resultat = $base->query($sql);
         return $resultat;
     }
@@ -25,7 +25,7 @@ class GetManager extends manager
      */
     public function getFirstArticles($base)
     {
-        $sql = "SELECT * FROM billet ORDER BY date_creation, Id_billet DESC LIMIT 4";
+        $sql = "SELECT * FROM billet ORDER BY date_creation DESC, Id_billet DESC LIMIT 4";
         $resultat = $base->query($sql);
         return $resultat;
     }
@@ -39,9 +39,20 @@ class GetManager extends manager
      */
     public function getArticle($Id_billet, $base)
     {
-        $sql = "SELECt * FROM billet WHERE Id_billet = ?";
+        $sql = "SELECT * FROM billet WHERE Id_billet = ?";
         $resultat = $base->prepare($sql);
         $resultat->execute(array($Id_billet));
         return $resultat->fetch();
+    }
+
+    public function setArticle($article, $base)
+    {
+        $sql = "INSERT INTO billet(titre, contenu, auteur, img) VALUES(:titre, :contenu, :auteur, :img)";
+        $resultat = $base->prepare($sql);
+        $resultat->bindValue(':titre', $article->getTitre());
+        $resultat->bindValue(':contenu', $article->getContenu());
+        $resultat->bindValue(':auteur', $article->getAuteur());
+        $resultat->bindValue(':img', $article->getImage());
+        $resultat->execute();
     }
 }

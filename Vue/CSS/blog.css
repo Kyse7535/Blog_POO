@@ -4,8 +4,13 @@
     box-sizing: border-box;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,700;0,900;1,400;1,700&display=swap');
 body {
     min-width: 400px;
+}
+
+main {
+    font-family: 'Lato';
 }
 
 main .date_auteur {

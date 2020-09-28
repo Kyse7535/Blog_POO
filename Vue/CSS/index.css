@@ -5,6 +5,7 @@
     font-family: 'Poppins';
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,700;0,900;1,400;1,700&display=swap');
 
 /*start header code*/
 
@@ -43,6 +44,10 @@ main h2 {
     text-transform: uppercase;
     padding: 3% 0;
     font-weight: 500;
+}
+
+main {
+    font-family: 'Lato';
 }
 
 

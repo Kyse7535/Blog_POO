@@ -29,6 +29,18 @@ try {
             CtlA_propos();
         } elseif ($_GET['action'] == "contact") {
             CtlContact();
+        } elseif ($_GET['action'] == "add") {
+            if (!empty($_POST['titre']) && !empty($_POST['contenu'])) {
+                $image = Ctlimage();
+                if (!empty($_POST['auteur']) && !empty($_POST['contenu']) && !empty($_POST['titre'])) {
+                    $auteur = htmlspecialchars($_POST['auteur']);
+                    $titre = htmlspecialchars($_POST['titre']);
+                    $contenu = htmlspecialchars($_POST['contenu']);
+                    CtlSetArticle($auteur, $titre, $contenu, $image);
+                }
+            } else {
+                CtlgetAddarticle();
+            }
         } else {
             throw new Exception("Impossible de charger la page");
         }

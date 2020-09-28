@@ -46,13 +46,14 @@
                     <?php
 
                     while ($donnees = $resultat1->fetch()) {
+                        $monarticle = new article($donnees);
                     ?>
                     <div class="item">
                         <figure>
                             <img class="img-fluid" src="Vue/CSS/blue-hour.jpg" alt="article">
                             <figcaption class="py-2"><a
-                                    href="index.php?action=article&Id=<?= $donnees['Id_billet']; ?>">
-                                    <b><?= $donnees['titre']; ?></b> , <?= $donnees['date_creation']; ?>
+                                    href="index.php?action=article&Id=<?= $monarticle->getId_billet() ?>">
+                                    <b><?= $monarticle->getTitre() ?></b> , <?= $monarticle->getDate_creation(); ?>
                                 </a>
 
                             </figcaption>
@@ -67,11 +68,12 @@
                 <h3>commentaires</h3>
                 <div class="commentaire">
                     <?php while ($comment = $commentaires->fetch()) {
-                        $Id_billet = $comment['Id_billet'];
+                        $moncommentaire = new comment($comment);
+
                     ?>
 
-                    <h6><b><?= $comment['auteur'] ?></b>, le <?= $comment['date_creation'] ?></h6>
-                    <p><?= $comment['commentaire'] ?></p>
+                    <h6><b><?= $moncommentaire->getAuteur() ?></b>, le <?= $moncommentaire->getDate_creation() ?></h6>
+                    <p><?= $moncommentaire->getCommentaire() ?></p>
                     <?php
                     } ?>
 
