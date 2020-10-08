@@ -16,7 +16,7 @@
                     <p><?= $nbcomment ?> commentaire(s)</p>
                 </div>
                 <figure>
-                    <img src="Vue/CSS/blue-hour.jpg" alt="" class="img-fluid">
+                    <img src="fichiers/<?php echo $article['img']; ?>" alt="" class="img-fluid">
                     <figcaption><?= $article['contenu'] ?></figcaption>
                 </figure>
             </div>
@@ -50,7 +50,7 @@
                     ?>
                     <div class="item">
                         <figure>
-                            <img class="img-fluid" src="Vue/CSS/blue-hour.jpg" alt="article">
+                            <img class="img-fluid" src="fichiers/<?php echo $monarticle->getImg(); ?>" alt="article">
                             <figcaption class="py-2"><a
                                     href="index.php?action=article&Id=<?= $monarticle->getId_billet() ?>">
                                     <b><?= $monarticle->getTitre() ?></b> , <?= $monarticle->getDate_creation(); ?>

@@ -5,6 +5,12 @@ class objet
     {
         $this->hydrate($tableau);
     }
+    /**
+     * hydrate donne une valeur definie a chaque attribut de ma classe
+     *
+     * @param  mixed $tableau
+     * @return void
+     */
     public function hydrate($tableau)
     {
         foreach ($tableau as $key => $value) {

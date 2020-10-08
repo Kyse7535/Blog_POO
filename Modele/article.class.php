@@ -8,7 +8,7 @@ class article extends objet
     private $titre;
     private $contenu;
     private $date_creation;
-    private $image;
+    private $img;
 
     public function getId_billet()
     {
@@ -33,9 +33,9 @@ class article extends objet
         return $this->date_creation;
     }
 
-    public function getImage()
+    public function getImg()
     {
-        return $this->image;
+        return $this->img;
     }
 
     public function setId_billet($Id_billet)
@@ -67,8 +67,8 @@ class article extends objet
         $this->date_creation = htmlspecialchars($date_creation);
     }
 
-    public function setImage($image)
+    public function setImg($img)
     {
-        $this->image = htmlspecialchars($image);
+        $this->img = htmlspecialchars($img);
     }
 }

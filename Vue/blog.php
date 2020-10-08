@@ -17,10 +17,10 @@
                 <h2><?= $monarticle->getTitre() ?></h2>
                 <div class="date_auteur">
                     <p><?= $monarticle->getDate_creation() ?> | <?= $monarticle->getAuteur() ?></p>
-                    <p><?= $mycomment->getRowNumber($base, $monarticle->getId_billet()); ?> commentaire(s)</p>
+                    <p><?= $mycomment->getRowNumber($base, $monarticle->getId_billet()) ?> commentaire(s)</p>
                 </div>
                 <figure>
-                    <img src="<?= "../fichiers/" . $monarticle->getImage() ?>" alt="" class="img-fluid">
+                    <img src="fichiers/<?= $monarticle->getImg() ?>" alt="" class="img-fluid">
                     <figcaption><?= _50_premier_mot($monarticle->getContenu()) ?></figcaption>
                 </figure>
                 <a href="index.php?action=article&Id=<?= $monarticle->getId_billet() ?>">Lire la suite</a>
@@ -42,7 +42,7 @@
                     ?>
                     <div class="item">
                         <figure>
-                            <img class="img-fluid" src="Vue/CSS/blue-hour.jpg" alt="article">
+                            <img class="img-fluid" src="fichiers/<?php echo $monarticle->getImg(); ?>" alt=" article">
                             <figcaption class="py-2"><a
                                     href="index.php?action=article&Id=<?= $monarticle->getId_billet() ?>">
                                     <b><?= $monarticle->getTitre(); ?></b> , <?= $monarticle->getDate_creation() ?>

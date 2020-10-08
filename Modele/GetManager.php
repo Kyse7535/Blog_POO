@@ -45,6 +45,13 @@ class GetManager extends manager
         return $resultat->fetch();
     }
 
+    /**
+     * setArticle permet d'ajouter un article à la base de donnée
+     *
+     * @param  arclicle.class $article
+     * @param  object $base
+     * @return void
+     */
     public function setArticle($article, $base)
     {
         $sql = "INSERT INTO billet(titre, contenu, auteur, img) VALUES(:titre, :contenu, :auteur, :img)";
@@ -52,7 +59,7 @@ class GetManager extends manager
         $resultat->bindValue(':titre', $article->getTitre());
         $resultat->bindValue(':contenu', $article->getContenu());
         $resultat->bindValue(':auteur', $article->getAuteur());
-        $resultat->bindValue(':img', $article->getImage());
+        $resultat->bindValue(':img', $article->getImg());
         $resultat->execute();
     }
 }

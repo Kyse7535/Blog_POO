@@ -51,14 +51,14 @@
                 <div class="latest_article_list">
                     <?php
                     while ($donnees = $resultat->fetch(PDO::FETCH_ASSOC)) {
-                        $commentaire = new article($donnees);
+                        $monarticle = new article($donnees);
                     ?>
                     <div class="item">
                         <figure class="py-1">
-                            <img class="img-fluid" src="Vue/CSS/blue-hour.jpg" alt="article">
+                            <img class="img-fluid" src="fichiers/<?php echo $monarticle->getImg(); ?>" alt="article">
                             <figcaption class="py-2"><a
-                                    href="index.php?action=article&Id=<?= $commentaire->getId_billet(); ?>">
-                                    <b><?= $commentaire->getTitre(); ?></b> , <?= $commentaire->getDate_creation(); ?>
+                                    href="index.php?action=article&Id=<?= $monarticle->getId_billet(); ?>">
+                                    <b><?= $monarticle->getTitre(); ?></b> , <?= $monarticle->getDate_creation(); ?>
                                 </a>
 
                             </figcaption>

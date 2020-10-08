@@ -66,7 +66,7 @@ function CtlArticle($Id_billet)
     $nbcomment = $mycomment->getRowNumber($base, $Id_billet);
     $resultat1 = $myarticle->getFirstArticles($base);
     $commentaires = $mycomment->getFirstComments($Id_billet, $base);
-    if ($resultat1 == false || $commentaires == false || $nbcomment == false || $article == false) {
+    if ($resultat1 == false || $commentaires == false || $article == false) {
         throw new Exception("Impossible d'afficher la page");
     } else {
         require("./Vue/article.php");
@@ -76,9 +76,9 @@ function CtlArticle($Id_billet)
 /**
  * CtlSetComment
  *
- * @param  mixed $auteur
- * @param  mixed $comment
- * @param  mixed $Id_billet
+ * @param  string $auteur
+ * @param  string $comment
+ * @param  string $Id_billet
  * @return void
  */
 function CtlSetComment($auteur, $comment, $Id_billet)
@@ -118,6 +118,11 @@ function CtlgetAddarticle()
     require("./Vue/ajouter_article.php");
 }
 
+/**
+ * Ctlimage verifie si l'image n'a pas d'erreur et le transfert du dossier temporaire vers le dossier fichiers
+ *
+ * @return string
+ */
 function Ctlimage()
 {
 
@@ -156,11 +161,20 @@ function Ctlimage()
     }
 }
 
-function CtlSetArticle($auteur, $titre, $contenu, $image)
+/**
+ * CtlSetArticle
+ *
+ * @param  string $auteur
+ * @param  string $titre
+ * @param  string $contenu
+ * @param  string $img
+ * @return void
+ */
+function CtlSetArticle($auteur, $titre, $contenu, $img)
 {
     $myarticlemanager = new GetManager();
     $base = $myarticlemanager->connexion();
-    $tableau = array("auteur" => $auteur, "titre" => $titre, "contenu" => $contenu, "image" => $image);
+    $tableau = array("auteur" => $auteur, "titre" => $titre, "contenu" => $contenu, "img" => $img);
     $myarticle = new article($tableau);
     $myarticlemanager->setArticle($myarticle, $base);
     header('Location: index.php?action=blog');
